@@ -12,6 +12,10 @@
         <author><?= $podcast['author']; ?></author>
         <itunes:explicit><?= !empty($podcast['explicit']) ? 'yes' : 'no'; ?></itunes:explicit>
         <itunes:category text="<?= \Lightning\Tools\Scrub::toHTML($podcast['itunes-category']); ?>" />
+        <itunes:owner>
+            <itunes:email><?= \Lightning\Tools\Scrub::toHTML($podcast['email']); ?></itunes:email>
+            <itunes:name><?= \Lightning\Tools\Scrub::toHTML($podcast['author']); ?></itunes:name>
+        </itunes:owner>
         <?php foreach ($episodes as $episode): ?>
             <item>
                 <title><?= $episode->title; ?></title>
