@@ -6,7 +6,7 @@
         <title><?= $podcast['title']; ?></title>
         <language><?= $podcast['language'] ?? 'en-US'; ?></language>
         <description><?= $podcast['description']; ?></description>
-        <itunes:image><?= \Lightning\Model\URL::getAbsolute($podcast['image']); ?></itunes:image>
+        <itunes:image href="<?= \Lightning\Model\URL::getAbsolute($podcast['image']); ?>" />
         <link><?= $podcast['link'] ?? \Lightning\Tools\Configuration::get('web_root'); ?></link>
         <googleplay:category><?= $podcast['google-category']; ?></googleplay:category>
         <author><?= $podcast['author']; ?></author>
