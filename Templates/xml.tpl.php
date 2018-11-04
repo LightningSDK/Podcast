@@ -4,14 +4,19 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
     <channel>
         <title><?= $podcast['title']; ?></title>
-        <language><?= $podcast['language'] ?? 'en-US'; ?></language>
+        <language><?= $podcast['language'] ?? 'en-us'; ?></language>
         <description><?= $podcast['description']; ?></description>
+        <googleplay:image href="<?= \Lightning\Model\URL::getAbsolute($podcast['image']); ?>" />
         <itunes:image href="<?= \Lightning\Model\URL::getAbsolute($podcast['image']); ?>" />
         <link><?= $podcast['link'] ?? \Lightning\Tools\Configuration::get('web_root'); ?></link>
         <googleplay:category><?= $podcast['google-category']; ?></googleplay:category>
-        <author><?= $podcast['author']; ?></author>
+        <googleplay:explicit><?= !empty($podcast['explicit']) ? 'yes' : 'no'; ?></googleplay:explicit>
         <itunes:explicit><?= !empty($podcast['explicit']) ? 'yes' : 'no'; ?></itunes:explicit>
         <itunes:category text="<?= \Lightning\Tools\Scrub::toHTML($podcast['itunes-category']); ?>" />
+        <author><?= \Lightning\Tools\Scrub::toHTML($podcast['author']); ?></author>
+        <googleplay:author><?= \Lightning\Tools\Scrub::toHTML($podcast['author']); ?></googleplay:author>
+        <itunes:author><?= \Lightning\Tools\Scrub::toHTML($podcast['author']); ?></itunes:author>
+        <googleplay:email><?= \Lightning\Tools\Scrub::toHTML($podcast['email']); ?></googleplay:email>
         <itunes:owner>
             <itunes:email><?= \Lightning\Tools\Scrub::toHTML($podcast['email']); ?></itunes:email>
             <itunes:name><?= \Lightning\Tools\Scrub::toHTML($podcast['author']); ?></itunes:name>
