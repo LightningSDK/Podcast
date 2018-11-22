@@ -31,6 +31,8 @@ class Episodes extends Table {
         'duration',
     ];
 
+    protected $sort = ['date' => 'desc'];
+
     public function hasAccess() {
         return ClientUser::requireAdmin();
     }
