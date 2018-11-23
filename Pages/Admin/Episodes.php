@@ -6,6 +6,7 @@ use Lightning\Pages\Table;
 use Lightning\Tools\ClientUser;
 use Lightning\Tools\Configuration;
 use Lightning\Tools\IO\FileManager;
+use Lightning\Tools\Request;
 
 class Episodes extends Table {
     const TABLE = 'podcast_episode';
@@ -17,17 +18,29 @@ class Episodes extends Table {
             'type' => 'file',
             'replace' => true,
         ],
+        'image' => [
+            'type' => 'image',
+            'browser' => true,
+            'container' => 'images',
+            'format' => 'jpg',
+        ],
         'duration' => [
             'type' => 'hidden',
+        ],
+        'url' => [
+            'type' => 'url',
+            'unlisted' => true
         ],
     ];
 
     protected $fieldOrder = [
         'date',
         'title',
+        'url',
         'description',
         'keywords',
         'file',
+        'image',
         'duration',
     ];
 
@@ -40,6 +53,9 @@ class Episodes extends Table {
     public function initSettings() {
         parent::initSettings();
         $this->preset['file']['container'] = Configuration::get('modules.podcast.container');
+        $this->preset['url']['submit_function'] = function(&$output) {
+            $output['url'] = Request::post('url', Request::TYPE_URL) ?: Request::post('title', Request::TYPE_URL);
+        };
     }
 
     /**

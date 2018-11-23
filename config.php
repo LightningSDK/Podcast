@@ -5,7 +5,10 @@ return [
         'static' => [
             'podcasts.xml' => \Modules\Podcast\API\RSS::class,
             'admin/podcast' => \Modules\Podcast\Pages\Admin\Episodes::class,
-        ]
+        ],
+        'dynamic' => [
+            '^podcast(/.*)?$' => \Modules\Podcast\Pages\Podcasts::class,
+        ],
     ],
     'modules' => [
         'podcast' => [
