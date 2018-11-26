@@ -6,6 +6,7 @@ use Lightning\Model\Object;
 use Lightning\Model\URL;
 use Lightning\Tools\Configuration;
 use Lightning\Tools\Database;
+use Lightning\Tools\IO\FileManager;
 use Modules\ImageManager\Model\Image;
 
 class Episode extends Object {
@@ -21,7 +22,10 @@ class Episode extends Object {
     }
 
     public function getHeaderImage() {
-        $image = !empty($this->image) ? $this->image : Configuration::get('modules.podcast.metadata.image');
+        $fileHandler = FileManager::getFileHandler('', 'images');
+        $image = !empty($this->image)
+            ? $fileHandler->getWebURL($this->image)
+            : Configuration::get('modules.podcast.metadata.image');
         return Image::getImage($image, 500, \Lightning\Tools\Image::FORMAT_JPG);
     }
 
