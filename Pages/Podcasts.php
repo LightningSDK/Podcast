@@ -3,7 +3,6 @@
 namespace Modules\Podcast\Pages;
 
 use Lightning\Tools\Configuration;
-use Lightning\Tools\Image;
 use Lightning\Tools\IO\FileManager;
 use Lightning\Tools\Output;
 use Lightning\Tools\Request;
@@ -65,7 +64,7 @@ class Podcasts extends Page {
 
             HTML5::add('podcast', [
                 'aac' => $fileHandler->getWebURL($episode->file),
-                'still' => $episode->getImage(),
+                'still' => $episode->getHeaderImage(),
             ]);
 
             $template->set('episode', $episode);
