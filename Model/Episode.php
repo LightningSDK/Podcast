@@ -36,4 +36,20 @@ class Episode extends Object {
     public function getURL() {
         return URL::getAbsolute($this->getLink());
     }
+
+    public static function getSitemapUrls() {
+        $episodes = static::loadAll();
+
+        $urls = [];
+        foreach($episodes as $e) {
+            $date = explode('/', jdtogregorian($e->date));
+            $urls[] = [
+                'loc' => URL::getAbsolute('/podcast/' . $e->url),
+                'lastmod' => $date[2] . '-' . $date[0] . '-' . $date[1],
+                'changefreq' => 'yearly',
+                'priority' => .3,
+            ];
+        }
+        return $urls;
+    }
 }

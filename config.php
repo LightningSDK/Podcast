@@ -19,4 +19,7 @@ return [
             'filehandler' => '',
         ],
     ],
+    'sitemap' => [
+        \Modules\Podcast\Model\Episode::class,
+    ],
 ];
