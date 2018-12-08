@@ -62,10 +62,17 @@ class Podcasts extends Page {
 
             $fileHandler = FileManager::getFileHandler(Configuration::get('modules.podcast.filehandler'), Configuration::get('modules.podcast.container'));
 
+            $image = $episode->getHeaderImage();
+
             HTML5::add('podcast', [
                 'aac' => $fileHandler->getWebURL($episode->file),
-                'still' => $episode->getHeaderImage(),
+                'still' => $image,
             ]);
+
+            $this->setMeta('image', $image);
+            $this->setMeta('keywords', $episode->keywords);
+            $this->setMeta('description', $episode->description);
+            $this->setMeta('title', $episode->title);
 
             $template->set('episode', $episode);
 
