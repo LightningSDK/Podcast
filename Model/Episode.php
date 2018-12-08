@@ -45,7 +45,7 @@ class Episode extends Object {
             $date = explode('/', jdtogregorian($e->date));
             $urls[] = [
                 'loc' => URL::getAbsolute('/podcast/' . $e->url),
-                'lastmod' => $date[2] . '-' . strpad($date[0], 2, '0', STR_PAD_LEFT) . '-' . strpad($date[1], 2, '0', STR_PAD_LEFT)
+                'lastmod' => $date[2] . '-' . str_pad($date[0], 2, '0', STR_PAD_LEFT) . '-' . str_pad($date[1], 2, '0', STR_PAD_LEFT)
                 'changefreq' => 'yearly',
                 'priority' => .3,
             ];
