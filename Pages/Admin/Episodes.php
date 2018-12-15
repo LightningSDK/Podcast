@@ -33,6 +33,13 @@ class Episodes extends Table {
         ],
     ];
 
+    protected $action_fields = [
+        'view' => [
+            'display_name' => 'View',
+            'type' => 'html',
+        ],
+    ];
+
     protected $fieldOrder = [
         'date',
         'title',
@@ -55,6 +62,10 @@ class Episodes extends Table {
         $this->preset['file']['container'] = Configuration::get('modules.podcast.container');
         $this->preset['url']['submit_function'] = function(&$output) {
             $output['url'] = Request::post('url', Request::TYPE_URL) ?: Request::post('title', Request::TYPE_URL);
+        };
+
+        $this->action_fields['view']['html'] = function($row) {
+            return '<a href="/podcast/' . $row['url'] . '"><img src="/images/lightning/resume.png" /></a>';
         };
     }
 
