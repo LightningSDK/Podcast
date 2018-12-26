@@ -28,6 +28,7 @@
                 <enclosure url="<?= \Lightning\Model\URL::getAbsolute($fileHandler->getWebURL($episode->file)); ?>" type="audio/mpeg" length="<?= $fileHandler->getSize($episode->file); ?>" />
                 <pubDate><?= date('r', \Lightning\View\Field\Time::jdtounix($episode->date)); ?></pubDate>
                 <itunes:duration><?= sprintf('%02d:%02d:%02d', ($episode->duration/3600),($episode->duration/60%60), $episode->duration%60); ?></itunes:duration>
+                <guid><?= md5($episode->episode_id); ?></guid>
             </item>
         <?php endforeach; ?>
     </channel>
