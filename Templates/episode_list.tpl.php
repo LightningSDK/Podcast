@@ -1,5 +1,5 @@
 <div class="blog-container">
-    <?php use Lightning\View\SocialLinks; ?>
+    <?php use Lightning\View\SocialMedia\Links; ?>
 
     <?= $pagination->render(); ?>
     <?php foreach ($episodes as $episode): ?>
@@ -15,7 +15,7 @@
                 <div class="body">
                     <?= \Lightning\View\Text::shorten($episode->description); ?>
                 </div>
-                <?= SocialLinks::render($episode->getURL()); ?>
+                <?= Links::render($episode->getURL()); ?>
             </div>
         </div>
     <?php endforeach; ?>
