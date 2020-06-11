@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Podcast\Pages;
+namespace lightningsdk\podcast\Pages;
 
 use Lightning\Tools\Configuration;
 use Lightning\Tools\IO\FileManager;
@@ -10,7 +10,7 @@ use Lightning\Tools\Template;
 use Lightning\View\Page;
 use Lightning\View\Pagination;
 use Lightning\View\Video\HTML5;
-use Modules\Podcast\Model\Episode;
+use lightningsdk\podcast\Model\Episode;
 
 class Podcasts extends Page {
     public function hasAccess() {

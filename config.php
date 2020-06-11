@@ -3,11 +3,11 @@
 return [
     'routes' => [
         'static' => [
-            'podcasts.xml' => \Modules\Podcast\API\RSS::class,
-            'admin/podcast' => \Modules\Podcast\Pages\Admin\Episodes::class,
+            'podcasts.xml' => \lightningsdk\podcast\API\RSS::class,
+            'admin/podcast' => \lightningsdk\podcast\Pages\Admin\Episodes::class,
         ],
         'dynamic' => [
-            '^podcast(/.*)?$' => \Modules\Podcast\Pages\Podcasts::class,
+            '^podcast(/.*)?$' => \lightningsdk\podcast\Pages\Podcasts::class,
         ],
     ],
     'modules' => [
@@ -20,6 +20,6 @@ return [
         ],
     ],
     'sitemap' => [
-        \Modules\Podcast\Model\Episode::class,
+        \lightningsdk\podcast\Model\Episode::class,
     ],
 ];

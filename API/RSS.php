@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Podcast\API;
+namespace lightningsdk\podcast\API;
 
 use Lightning\Tools\Configuration;
 use Lightning\Tools\IO\FileManager;
 use Lightning\Tools\Output;
 use Lightning\Tools\Template;
 use Lightning\View\Page;
-use Modules\Podcast\Model\Episode;
+use lightningsdk\podcast\Model\Episode;
 
 class RSS extends Page {
 

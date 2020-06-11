@@ -1,15 +1,15 @@
 <?php
 
-namespace Modules\Podcast\Model;
+namespace lightningsdk\podcast\Model;
 
-use Lightning\Model\Object;
+use Lightning\Model\BaseObject;
 use Lightning\Model\URL;
 use Lightning\Tools\Configuration;
 use Lightning\Tools\Database;
 use Lightning\Tools\IO\FileManager;
-use Modules\ImageManager\Model\Image;
+use lightningsdk\imagemanager\Model\Image;
 
-class Episode extends Object {
+class Episode extends BaseObject {
     const TABLE = 'podcast_episode';
     const PRIMARY_KEY = 'episode_id';
 

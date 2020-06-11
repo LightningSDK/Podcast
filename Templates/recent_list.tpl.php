@@ -1,4 +1,4 @@
-<?php $episodes = \Modules\Podcast\Model\Episode::loadByQuery(['order_by' => ['date' => 'DESC'], 'limit' => 5]); ?>
+<?php $episodes = \lightningsdk\podcast\Model\Episode::loadByQuery(['order_by' => ['date' => 'DESC'], 'limit' => 5]); ?>
 <?php if (!empty($episodes)): ?>
 <ul>
     <?php foreach ($episodes as $episode): ?>

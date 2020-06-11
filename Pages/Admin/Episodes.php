@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Podcast\Pages\Admin;
+namespace lightningsdk\podcast\Pages\Admin;
 
 use Lightning\Pages\Table;
 use Lightning\Tools\ClientUser;
