@@ -1,5 +1,5 @@
 <div class="blog-container">
-    <?php use Lightning\View\SocialMedia\Links; ?>
+    <?php use lightningsdk\core\View\SocialMedia\Links; ?>
 
     <?= $pagination->render(); ?>
     <?php foreach ($episodes as $episode): ?>
@@ -13,7 +13,7 @@
                 <?= date('F j, Y', strtotime(jdtogregorian($episode->date))); ?></div>
             <div class="body-wrapper">
                 <div class="body">
-                    <?= \Lightning\View\Text::shorten($episode->description); ?>
+                    <?= \lightningsdk\core\View\Text::shorten($episode->description); ?>
                 </div>
                 <?= Links::render($episode->getURL()); ?>
             </div>

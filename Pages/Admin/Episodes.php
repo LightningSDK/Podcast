@@ -2,11 +2,11 @@
 
 namespace lightningsdk\podcast\Pages\Admin;
 
-use Lightning\Pages\Table;
-use Lightning\Tools\ClientUser;
-use Lightning\Tools\Configuration;
-use Lightning\Tools\IO\FileManager;
-use Lightning\Tools\Request;
+use lightningsdk\core\Pages\Table;
+use lightningsdk\core\Tools\ClientUser;
+use lightningsdk\core\Tools\Configuration;
+use lightningsdk\core\Tools\IO\FileManager;
+use lightningsdk\core\Tools\Request;
 
 class Episodes extends Table {
     const TABLE = 'podcast_episode';

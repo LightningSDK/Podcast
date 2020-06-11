@@ -2,11 +2,11 @@
 
 namespace lightningsdk\podcast\API;
 
-use Lightning\Tools\Configuration;
-use Lightning\Tools\IO\FileManager;
-use Lightning\Tools\Output;
-use Lightning\Tools\Template;
-use Lightning\View\Page;
+use lightningsdk\core\Tools\Configuration;
+use lightningsdk\core\Tools\IO\FileManager;
+use lightningsdk\core\Tools\Output;
+use lightningsdk\core\Tools\Template;
+use lightningsdk\core\View\Page;
 use lightningsdk\podcast\Model\Episode;
 
 class RSS extends Page {

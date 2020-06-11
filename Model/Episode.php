@@ -2,11 +2,11 @@
 
 namespace lightningsdk\podcast\Model;
 
-use Lightning\Model\BaseObject;
-use Lightning\Model\URL;
-use Lightning\Tools\Configuration;
-use Lightning\Tools\Database;
-use Lightning\Tools\IO\FileManager;
+use lightningsdk\core\Model\BaseObject;
+use lightningsdk\core\Model\URL;
+use lightningsdk\core\Tools\Configuration;
+use lightningsdk\core\Tools\Database;
+use lightningsdk\core\Tools\IO\FileManager;
 use lightningsdk\imagemanager\Model\Image;
 
 class Episode extends BaseObject {
@@ -26,7 +26,7 @@ class Episode extends BaseObject {
         $image = !empty($this->image)
             ? $fileHandler->getWebURL($this->image)
             : Configuration::get('modules.podcast.metadata.image');
-        return Image::getImage($image, 500, \Lightning\Tools\Image::FORMAT_JPG);
+        return Image::getImage($image, 500, \lightningsdk\core\Tools\Image::FORMAT_JPG);
     }
 
     public function getLink() {

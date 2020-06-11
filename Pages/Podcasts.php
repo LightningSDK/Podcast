@@ -2,14 +2,14 @@
 
 namespace lightningsdk\podcast\Pages;
 
-use Lightning\Tools\Configuration;
-use Lightning\Tools\IO\FileManager;
-use Lightning\Tools\Output;
-use Lightning\Tools\Request;
-use Lightning\Tools\Template;
-use Lightning\View\Page;
-use Lightning\View\Pagination;
-use Lightning\View\Video\HTML5;
+use lightningsdk\core\Tools\Configuration;
+use lightningsdk\core\Tools\IO\FileManager;
+use lightningsdk\core\Tools\Output;
+use lightningsdk\core\Tools\Request;
+use lightningsdk\core\Tools\Template;
+use lightningsdk\core\View\Page;
+use lightningsdk\core\View\Pagination;
+use lightningsdk\core\View\Video\HTML5;
 use lightningsdk\podcast\Model\Episode;
 
 class Podcasts extends Page {
