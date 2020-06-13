@@ -11,7 +11,7 @@ use lightningsdk\podcast\Model\Episode;
 
 class RSS extends Page {
 
-    protected $page = ['xml', 'Podcast'];
+    protected $page = ['xml', 'lightningsdk/podcast'];
 
     public function hasAccess() {
         return true;

@@ -52,7 +52,7 @@ class Podcasts extends Page {
 
             $template->set('pagination', $pagination);
 
-            $this->page = ['episode_list', 'Podcast'];
+            $this->page = ['episode_list', 'lightningsdk/podcast'];
         } else {
             // This is a specific page
             $episode = Episode::loadByUrl($location[1]);
@@ -76,7 +76,7 @@ class Podcasts extends Page {
 
             $template->set('episode', $episode);
 
-            $this->page = ['episode', 'Podcast'];
+            $this->page = ['episode', 'lightningsdk/podcacst'];
         }
     }
 }
