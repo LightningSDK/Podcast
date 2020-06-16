@@ -10,6 +10,11 @@ return [
             '^podcast(/.*)?$' => \lightningsdk\podcast\Pages\Podcasts::class,
         ],
     ],
+    'markup' => [
+        'renderers' => [
+            'podcst' => \lightningsdk\podcast\View\Podcast::class,
+        ],
+    ],
     'modules' => [
         'podcast' => [
             'container' => [
