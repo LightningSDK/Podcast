@@ -76,7 +76,7 @@ class Podcasts extends Page {
 
             $template->set('episode', $episode);
 
-            $this->page = ['episode', 'lightningsdk/podcacst'];
+            $this->page = ['episode', 'lightningsdk/podcast'];
         }
     }
 }
