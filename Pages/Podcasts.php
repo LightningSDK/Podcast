@@ -66,6 +66,7 @@ class Podcasts extends Page {
 
             HTML5::add('podcast', [
                 'aac' => $fileHandler->getWebURL($episode->file),
+                'widescreen' => true,
                 'still' => $image,
             ]);
 
