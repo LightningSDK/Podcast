@@ -1,5 +1,5 @@
 <div class="blog-container">
-    <?php use lightningsdk\core\View\SocialMedia\Links; ?>
+    <?php use lightningsdk\core\View\SocialMedia\Share; ?>
 
     <?= $pagination->render(); ?>
     <?php foreach ($episodes as $episode): ?>
@@ -15,7 +15,7 @@
                 <div class="body">
                     <?= \lightningsdk\core\View\Text::shorten($episode->description); ?>
                 </div>
-                <?= Links::render($episode->getURL()); ?>
+                <?= Share::render($episode->getURL()); ?>
             </div>
         </div>
     <?php endforeach; ?>
