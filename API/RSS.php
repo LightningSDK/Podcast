@@ -27,7 +27,6 @@ class RSS extends Page {
         $template->set('fileHandler', $fileHandler);
 
         Output::setContentType('application/xml');
-        Configuration::set('debug', false);
         echo $template->render($this->page);
         exit;
     }
