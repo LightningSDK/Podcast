@@ -12,7 +12,7 @@ return [
     ],
     'markup' => [
         'renderers' => [
-            'podcst' => \lightningsdk\podcast\View\Podcast::class,
+            'podcast' => \lightningsdk\podcast\View\Podcast::class,
         ],
     ],
     'modules' => [
